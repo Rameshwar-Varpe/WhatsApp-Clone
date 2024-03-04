@@ -9,45 +9,28 @@ function LeftToolBar() {
                 direction={"row"}
                 justifyContent="space-between"
                 bgcolor={"#f0f2f5"}
-                width="100%"
+                width="inherit"
                 padding={"10px 16px"}
             >
-                <Stack
-                    justifyContent={"flex-start"}
-                >
-                    <DefaultUserIcon heightt={40} widthh={40} colorr1={"#dfe5e7"} colorr2={"#ffffff"} />
-                </Stack>
+                <DefaultUserIcon heightt={40} widthh={40} colorr1={"#dfe5e7"} colorr2={"#ffffff"} />
                 <Stack
                     direction="row"
-                    justifyContent="flex-end"
                     alignItems="center"
-                    spacing={"8.2px"}
+                    spacing={3}
                 >
-                    <Box
-                        padding={"6px 8px"}
-                    >
+                    <Box >
                         <CommunitiesIcon heightt={24} widthh={24} />
                     </Box>
-                    <Box
-                        padding={"6px 8px"}
-                    >
+                    <Box>
                         <StatusIcon heightt={24} widthh={24} />
                     </Box>
-
-                    <Box
-                        padding={"6px 8px"}
-                    >
+                    <Box>
                         <ChannelsIcon heightt={24} widthh={24} />
                     </Box>
-
-                    <Box
-                        padding={"6px 8px"}                    >
+                    <Box>
                         <NewChatIcon heightt={24} widthh={24} />
                     </Box>
-
-                    <Box
-                        padding={"6px 8px"}
-                    >
+                    <Box>
                         <MenuIcon heightt={24} widthh={24} />
                     </Box>
                 </Stack>

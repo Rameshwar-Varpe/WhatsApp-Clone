@@ -7,12 +7,14 @@ function ChatListSection(props) {
             {props.contacts.map((contact, index) => (
                 <>
                     <Stack
-                        key="index"
+                        key={index}
                         width="100%"
-                        margin="2px 0 2px 0"
                         justifyContent="space-between"
                         direction="row"
                         alignItems="center"
+                        whiteSpace={"nowrap"}
+                    // overflow={"hidden"}
+                    // textOverflow={"ellipsis"}
                     >
                         <Stack
                             direction="row"
@@ -31,20 +33,33 @@ function ChatListSection(props) {
                                 <Typography
                                     fontSize="17px"
                                     color="#111B21"
+                                    fontFamily={"inherit"}
                                 >
                                     {contact.name}
                                 </Typography>
                                 <Typography
+                                    fontFamily={"inherit"}
                                     fontSize="14px"
                                     color="#667781"
+                                    sx={{
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap',
+                                        maxWidth: '100%'
+                                    }}
                                 >
                                     {props.chats.find((chat) => chat.mobile === contact.mobile)?.content || ""}
                                 </Typography>
                             </Stack>
                         </Stack>
                         <Stack
+                        padding={"0 15px 0 0"}
                         >
-                            <Typography>
+                            <Typography
+                                color={"#667781"}
+                                fontFamily={"inherit"}
+                                fontSize={"12px"}
+                            >
                                 {contact.lastChat}
                             </Typography>
 
