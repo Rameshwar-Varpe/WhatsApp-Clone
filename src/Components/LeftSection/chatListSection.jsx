@@ -1,4 +1,4 @@
-import { Avatar, Divider, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Divider, Grid, Typography } from "@mui/material";
 
 function ChatListSection(props) {
     return (
@@ -6,27 +6,25 @@ function ChatListSection(props) {
 
             {props.contacts.map((contact, index) => (
                 <>
-                    <Stack
+                    <Grid
                         key={index}
-                        width="100%"
-                        justifyContent="space-between"
-                        direction="row"
-                        alignItems="center"
-                        whiteSpace={"nowrap"}
-                    // overflow={"hidden"}
-                    // textOverflow={"ellipsis"}
+                        width="inherit"
+                        // justifyContent="space-between"
+                        // direction="row"
+                        // alignItems="center"
+                        // whiteSpace={"nowrap"}
                     >
-                        <Stack
+                        <Box
                             direction="row"
                             alignItems="center"
                         >
-                            <Stack
+                            <Box
                                 padding="12px 15px 12px 13px"
                             >
                                 <Avatar key={index} alt="profile picture" src={contact.profile} sx={{ height: "49px", width: "49px" }} />
-                            </Stack>
+                            </Box>
 
-                            <Stack
+                            <Box
                                 direction="column"
                                 padding="0 15px 0 0"
                             >
@@ -50,9 +48,9 @@ function ChatListSection(props) {
                                 >
                                     {props.chats.find((chat) => chat.mobile === contact.mobile)?.content || ""}
                                 </Typography>
-                            </Stack>
-                        </Stack>
-                        <Stack
+                            </Box>
+                        </Box>
+                        <Box
                         padding={"0 15px 0 0"}
                         >
                             <Typography
@@ -66,8 +64,8 @@ function ChatListSection(props) {
                             <Typography>
                                 { }
                             </Typography>
-                        </Stack>
-                    </Stack>
+                        </Box>
+                    </Grid>
                     <Divider variant="inset" />
                 </>
             ))}

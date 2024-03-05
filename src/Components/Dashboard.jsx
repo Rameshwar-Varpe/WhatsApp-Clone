@@ -94,7 +94,7 @@ function Dashboard() {
             >
                 <Grid
                     container
-                    xs={12} sm={6} md={4} lg={3.6} xl={3}
+                    xs={12} sm={6} md={4} lg={5} xl={3}
                     sx={{
                         height: "100vh",
                         fontFamily: " Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif"
@@ -112,7 +112,7 @@ function Dashboard() {
                 </Grid>
                 <Grid
                     container
-                    xs={12} sm={6} md={8} lg={8.4} xl={9}
+                    xs={12} sm={6} md={8} lg={7} xl={9}
                     sx={{
                         height: "100vh",
                         fontFamily: " Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif"
