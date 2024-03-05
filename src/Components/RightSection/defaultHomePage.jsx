@@ -10,7 +10,7 @@ function DefaultHomePage() {
             alignItems={"center"}
             justifyContent={"center"}
             bgcolor={"#F0F2F5"}
-            padding={"28px 100px"}
+            padding={"28px 190px"}
             textAlign={"center"}
         >
             <CardMedia

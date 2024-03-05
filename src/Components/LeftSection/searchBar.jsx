@@ -7,7 +7,6 @@ function SearchBar() {
   return (
     <Stack
       padding="6.5px 0px 6.5px 12px"
-      width="inherit"
       alignItems="center"
       direction="row"
     >
@@ -30,8 +29,8 @@ function SearchBar() {
         }}
         startAdornment={
           <InputAdornment position="end">
-            <IconButton 
-            sx={{ padding: "0px 30px 0px 2px" }}
+            <IconButton
+              sx={{ padding: "0px 30px 0px 2px" }}
             >
               <SearchIcon />
             </IconButton>

@@ -8,8 +8,8 @@ function LeftToolBar() {
             <Stack
                 direction={"row"}
                 justifyContent="space-between"
+                alignItems={"center"}
                 bgcolor={"#f0f2f5"}
-                width="inherit"
                 padding={"10px 16px"}
             >
                 <DefaultUserIcon heightt={40} widthh={40} colorr1={"#dfe5e7"} colorr2={"#ffffff"} />
@@ -18,7 +18,7 @@ function LeftToolBar() {
                     alignItems="center"
                     spacing={3}
                 >
-                    <Box >
+                    <Box>
                         <CommunitiesIcon heightt={24} widthh={24} />
                     </Box>
                     <Box>
