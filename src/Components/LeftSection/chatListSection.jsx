@@ -3,7 +3,7 @@ import { Avatar, Box, Divider, Grid, Typography, Stack, Button, Paper } from "@m
 function ChatListSection(props) {
 
     const handleButtonClick = (contact) => {
-        
+
         props.setSelectedContact(contact);
         props.setShowChat(false);
     }
@@ -15,6 +15,7 @@ function ChatListSection(props) {
                 maxHeight: "100%",
                 scrollbarWidth: "thin",
             }}>
+
             {props.contacts.map((contact, index) => (
                 <Button
                     key={index}
@@ -27,11 +28,11 @@ function ChatListSection(props) {
                             backgroundColor: "transparent",
                         },
                     }}
-                    // bgcolor: props.showForm
-                    //             ? props.selectedEmployee === employee
-                    //                 ? "red"
-                    //                 : "#556052"
-                    //             : "#556052"
+                // bgcolor: props.showForm
+                //             ? props.selectedEmployee === employee
+                //                 ? "red"
+                //                 : "#556052"
+                //             : "#556052"
 
                 >
                     <Stack width={"inherit"}>

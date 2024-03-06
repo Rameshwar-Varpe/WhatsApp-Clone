@@ -56,13 +56,18 @@ function RightToolBar(props) {
                         padding="0 14px 0 0"
                         alignItems="center"
                     >
-                        <Box>
-                            <VideoCallIcon />
-                        </Box>
                         <Box
-                            padding="0 0 0 8px"
+                            display={"flex"}
+                            padding="0 14px 0 0"
                         >
-                            <VideoCallDropDownIcon />
+                            <Box>
+                                <VideoCallIcon />
+                            </Box>
+                            <Box
+                                padding="0 0 0 8px"
+                            >
+                                <VideoCallDropDownIcon />
+                            </Box>
                         </Box>
                     </Stack>
                     <Box

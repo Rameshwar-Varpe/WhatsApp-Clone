@@ -1,7 +1,12 @@
 import bgImage from '../../DefaultImages/whatsappBackground.png'
-import { Stack } from '@mui/material';
+import { Box, IconButton, InputBase, Stack } from '@mui/material';
 import RightToolBar from '../Toolbar/rightToolBar';
+import { PlusIcon, SendIcon, SmilyIcon, VoiceIcon } from '../../assets/icons';
+import { useState } from 'react';
+
 function ChatSection(props) {
+
+    const [sendOption, setSendOption] = useState(false);
 
     return (
         <>
@@ -11,7 +16,10 @@ function ChatSection(props) {
                 width={"inherit"}
                 fontFamily={"inherit"}
             >
-                <RightToolBar selectedContact={props.selectedContact} />
+                <RightToolBar
+                 {...props}
+                //  selectedContact={props.selectedContact} 
+                 />
                 <Stack
                     sx={{
                         backgroundImage: `url(${bgImage})`,
@@ -19,6 +27,57 @@ function ChatSection(props) {
                         bgcolor: "#efeae2",
                     }}
                 >
+
+                </Stack>
+
+                <Stack
+                    direction={"row"}
+                    bgcolor={"#F0F2F5"}
+                    alignItems={"center"}
+                    padding={"5px 16px"}
+                    // justifyContent={"space-between"}
+                >
+                    <Stack
+                        padding={"5px 0"}
+                        direction={"inherit"}
+                        alignItems={"inherit"}
+                    >
+                        <Box
+                            margin={"0 8px"}
+                        >
+                            <SmilyIcon />
+                        </Box>
+                        <Box
+                            margin={"0 8px"}
+                        >
+                            <IconButton><PlusIcon /></IconButton>
+                        </Box>
+                    </Stack>
+
+                        <InputBase
+                            placeholder='Type a message'
+                            sx={{
+                                backgroundColor: "#FFFFFF",
+                                fontFamily: "inherit",
+                                borderRadius: "10px",
+                                padding: "5px 12px",
+                                margin: "5px 8px",
+                            }}
+                            fullWidth
+                            onChange={() => setSendOption(true)}
+                        />
+                    <Box
+                        margin={"0 10px 0 15px"}
+                    >
+                        {
+                            sendOption
+                                ?
+                                <SendIcon />
+                                :
+                                <VoiceIcon />
+                        }
+
+                    </Box>
                 </Stack>
             </Stack>
         </>
