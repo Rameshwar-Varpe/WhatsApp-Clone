@@ -1,10 +1,11 @@
 import { Grid, Stack } from "@mui/material";
-import LeftToolBar from "./Toolbar/leftToolBar.jsx";
-import SearchBar from "./LeftSection/searchBar.jsx"
-import ChatListSection from "./LeftSection/chatListSection.jsx";
+import LeftToolBar from "./Toolbar/leftToolBar.tsx";
+import SearchBar from "./LeftSection/searchBar.tsx"
+import ChatListSection from "./LeftSection/chatListSection.tsx";
 import { useState } from "react";
 import DefaultHomePage from "./RightSection/defaultHomePage.jsx";
-import ChatSection from './RightSection/chatSection.jsx'
+import ChatSection from './RightSection/chatSection.tsx'
+import { useSelector } from "react-redux";
 
 function Dashboard() {
     const [contacts, setContacts] = useState(
@@ -19,78 +20,76 @@ function Dashboard() {
         ]
     )
 
-    const [chats, setChats] = useState(
-        [
-            {
-                id: '7',
-                content: "Good Night",
-                time: '08:56',
-                date: '05/03/2024',
-                mobile: '9324102653',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '1',
-                content: "Hiii!!! Whats going on aa😃",
-                time: '13:24',
-                date: '02/03/2024',
-                mobile: '9422063173',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '2',
-                content: "Good morning...",
-                time: '13:24',
-                date: '02/03/2024',
-                mobile: '7218724953',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '3',
-                content: "How was the dinner",
-                time: '15:26',
-                date: '01/03/2024',
-                mobile: '9579599178',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '4',
-                content: "This is to inform you all that MCA",
-                time: '15:26',
-                date: '29/02/2024',
-                mobile: '7843039075',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '5',
-                content: "Call karjo ratri.",
-                time: '16:26',
-                date: '25/01/2024',
-                mobile: '8483005153',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            },
-            {
-                id: '6',
-                content: "Okk will check then",
-                time: '16:26',
-                date: '01/01/2024',
-                mobile: '9322755952',
-                deliveredStatus: 'true',
-                readStatus: 'true'
-            }
-        ]
-    )
+    // const [chats, setChats] = useState(
+    //     [
+    //         {
+    //             id: '7',
+    //             content: "Good Night",
+    //             time: '08:56',
+    //             date: '05/03/2024',
+    //             mobile: '9324102653',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '1',
+    //             content: "Hiii!!! Whats going on aa😃",
+    //             time: '13:24',
+    //             date: '02/03/2024',
+    //             mobile: '9422063173',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '2',
+    //             content: "Good morning...",
+    //             time: '13:24',
+    //             date: '02/03/2024',
+    //             mobile: '7218724953',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '3',
+    //             content: "How was the dinner",
+    //             time: '15:26',
+    //             date: '01/03/2024',
+    //             mobile: '9579599178',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '4',
+    //             content: "This is to inform you all that MCA",
+    //             time: '15:26',
+    //             date: '29/02/2024',
+    //             mobile: '7843039075',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '5',
+    //             content: "Call karjo ratri.",
+    //             time: '16:26',
+    //             date: '25/01/2024',
+    //             mobile: '8483005153',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         },
+    //         {
+    //             id: '6',
+    //             content: "Okk will check then",
+    //             time: '16:26',
+    //             date: '01/01/2024',
+    //             mobile: '9322755952',
+    //             deliveredStatus: 'true',
+    //             readStatus: 'true'
+    //         }
+    //     ]
+    // )
 
-    const [showChat, setShowChat] = useState("true");
-    const [selectedContact, setSelectedContact] = useState(null);
 
-    // const [check, setCheck] = useState("798")
+    const selectedContact = useSelector((state) => state.selectedContact.selectedContact)
 
     return (
         <>
@@ -113,14 +112,10 @@ function Dashboard() {
                         <LeftToolBar />
                         <SearchBar />
                         <ChatListSection
-                            // check={check}
                             contacts={contacts}
                             setContacts={setContacts}
-                            chats={chats}
-                            setChats={setChats}
-                            setShowChat={setShowChat}
-                            setSelectedContact={setSelectedContact}
-                            showChat={showChat}
+                            // chats={chats}
+                            // setChats={setChats}
                         />
                     </Stack>
                 </Grid>
@@ -138,11 +133,11 @@ function Dashboard() {
                     // justifyContent={"space-between"}
                     > */}
                     {
-                        showChat
+                        Object.values(selectedContact).length < 1
                             ?
                             <DefaultHomePage />
                             :
-                            <ChatSection selectedContact={selectedContact} />
+                            <ChatSection />
                     }
                     {/* </Stack> */}
                 </Grid>
